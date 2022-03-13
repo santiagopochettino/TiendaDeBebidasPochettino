@@ -1,0 +1,27 @@
+header .main-header{
+    width: 100%;
+    display: flex;
+    padding: 10px 25px;
+    justify-content: space-between;
+    box-shadow: 1px 5px 15px #81818129;
+  }
+  nav{ 
+    display:flex;
+    justify-content: space-around;
+    background-color: rgba(20, 10, 9, 0.466);
+  }
+ .navbar{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    
+  }
+  .navbar li{
+    margin-right: 15px;
+  }
+  .container-logo img{
+  margin-top: 6px;
+  margin-bottom: 3px;
+  height: 150px;
+  }
+  
