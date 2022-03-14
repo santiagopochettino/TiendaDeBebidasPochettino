@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@mui/material/Button';
+import CartWidget from './CartWidget';
 
 
 //css
@@ -11,7 +12,8 @@ function NavBar  ()  {
         <header className='main-header'>
            <nav>
            <div className='container-logo'>
-              <img src="brand.jpg" className='img-header'/>
+             <CartWidget />
+             <h1>Tienda de bebidas Sofía</h1>
             </div>
          
             <ul className="navbar">

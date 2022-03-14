@@ -8,7 +8,7 @@ header .main-header{
   nav{ 
     display:flex;
     justify-content: space-around;
-    background-color: rgba(20, 10, 9, 0.466);
+    background-color:#fff;
   }
  .navbar{
     list-style: none;
@@ -19,9 +19,13 @@ header .main-header{
   .navbar li{
     margin-right: 15px;
   }
-  .container-logo img{
-  margin-top: 6px;
-  margin-bottom: 3px;
-  height: 150px;
+  .container-logo{
+    display: flex;
+  }
+  .container-logo h1{
+  color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
