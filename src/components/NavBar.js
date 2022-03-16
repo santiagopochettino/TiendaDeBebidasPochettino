@@ -1,10 +1,12 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import CartWidget from './CartWidget';
+import Logo from './Logo';
+import CartWidget from '../components/CartWidget'
 
 
 //css
-import '../css/NavBar/NavBar.css'
+import '../css/NavBar.css'
+
 
 function NavBar  ()  {
     return( 
@@ -12,7 +14,8 @@ function NavBar  ()  {
         <header className='main-header'>
            <nav>
            <div className='container-logo'>
-             <CartWidget />
+             <Logo />
+
              <h1>Tienda de bebidas Sofía</h1>
             </div>
          
@@ -22,8 +25,12 @@ function NavBar  ()  {
                 <li><Button variant="contained" aria-label="outlined primary button group">Nosotros</Button></li>
                 <li><Button variant="contained" aria-label="outlined primary button group">Contacto</Button></li>
             </ul>
+            <CartWidget/>
+           
            </nav>
+          
         </header>
+       
 
     </div>
 )};

@@ -1,12 +1,14 @@
 import React from 'react'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 //css
-import '../css/CartWidget/CartWidget.css'
+import '../css/CartWidget.css'
 
 const CartWidget = () => {
   return (
-    <div className='header-logo'>
-        <img src='logo.jpg'  alt="logo"/>
+    <div className='cart-icon'>
+        <ShoppingCartIcon/>
+        
     </div>
   )
 }
