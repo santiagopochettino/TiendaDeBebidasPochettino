@@ -1,13 +1,14 @@
 
 import React from 'react'
+import ItemCount from './ItemCount'
 
 //CSS
 import '../css/ItemListContainer.css'
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   return (
     <div>
-      <h2>{props.title}</h2>
+      <ItemCount title='Fernet Branca'/>
     </div>
   )
 }
