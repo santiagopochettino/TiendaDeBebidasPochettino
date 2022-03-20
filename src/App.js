@@ -2,6 +2,8 @@
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer'
 
+
+
 //ccs
 import './css/App.css';
 
@@ -10,6 +12,8 @@ function App() {
     <div className='App'>
        <NavBar/>
        <ItemListContainer/>
+      
+     
        
     </div>
   );

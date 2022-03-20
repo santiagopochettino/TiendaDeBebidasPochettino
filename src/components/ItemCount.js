@@ -3,8 +3,8 @@ import React, {useState} from 'react'
 //css
 import '../css/ItemCount.css'
 
-const ItemCount = ({onAdd, title}) => {
-    const stock = 6
+const ItemCount = ({onAdd,stock, title, price, img, alt}) => {
+    
     const initial = 1
    const [count, setCount]= useState(initial);
    const addCount = ()=>{
@@ -17,17 +17,19 @@ const ItemCount = ({onAdd, title}) => {
     }
     const finishShop = ()=>{
         onAdd(
-            alert(`Agregaste ${count} ${title} al carrito`)
+            alert(` Agregaste ${count} botellas de ${title} ! al carrito.`)
         )
     }
 
-  return (
-    <div className='countContainer'>
-         
+  return ( 
+      <>
+      <div className='ItemContainer'>
+        <img className='imgSize' src={img} alt={alt}/>
+        <h2 >{title}</h2>
+        <p>Precio: $ {price}</p>
+        <p>Stock: {stock}</p>
+        <div className='countContainer'>
         <div className='countContainer__counter'>
-
-             <img  src='fernet.jpg' alt='fernet branca'/>
-             <h4 className='countContainer__counter--h4'>{title}</h4>
             <button className='countContainer__counter--button'
              onClick={removeCount}
              disabled={count === initial ? true : null}>
@@ -43,17 +45,17 @@ const ItemCount = ({onAdd, title}) => {
                 +
             </button>
             
-
             <button  className='countContainer__counter--button--finish' 
             onClick={finishShop}
             disabled={stock === 0 ? true : null}>
-            Agregar
+            Comprar
             </button>
-
         </div>
-
-
     </div>
+
+        </div> 
+   
+      </>
   )
 }
 

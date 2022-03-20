@@ -3,12 +3,13 @@ header .main-header{
     display: flex;
     padding: 10px 25px;
     justify-content: space-between;
-    box-shadow: 1px 5px 15px #81818129;
+    
   }
   nav{ 
     display:flex;
     justify-content: space-around;
     background-color:#fff;
+    box-shadow: 1px 15px 15px #81818129;
   }
  .navbar{
     list-style: none;
@@ -23,7 +24,7 @@ header .main-header{
     display: flex;
   }
   .container-logo h1{
-  color: rgb(91, 91, 235);
+  color: #0ac1a8;
   display: flex;
   justify-content: center;
   align-items: center;
