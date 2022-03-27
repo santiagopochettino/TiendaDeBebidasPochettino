@@ -42,10 +42,10 @@ export const productList =
         "stock":10,
         "thumbnailUrl": "https://www.disevil.com/223-large_default/vodka-absolut-1-l.jpg"
     },
-    {
+    {   
+        "name":'Vodka Smirnoff',
         "price": 650,
         "id": 7,
-        "name":'Vodka Smirnoff',
         "stock":10,
         "thumbnailUrl": "http://d2r9epyceweg5n.cloudfront.net/stores/001/107/356/products/vodka-smirnoff-botella-de-750-ml-1-21-73ad137d7122c3a00816260585951637-640-0.png"
     },

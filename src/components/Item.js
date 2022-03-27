@@ -5,6 +5,7 @@ import React,{useState} from 'react'
 import '../css/ItemCount.css'
 
 const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
+
   const initial = 1
    const [count, setCount]= useState(initial);
    const addCount = ()=>{
@@ -25,7 +26,7 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
     <>
       <div className='ItemContainer'>
         <img className='imgSize' src={thumbnailUrl} alt=""/>
-        <h2 >Nombre: {name}</h2>
+        <h3 >Nombre: {name}</h3>
         <p>Nro de producto: {id}</p>
         <p>Precio: $ {price}</p>
         <p>Stock: {stock}</p>

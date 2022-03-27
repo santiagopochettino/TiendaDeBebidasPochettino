@@ -36,7 +36,7 @@ const ItemList = () => {
                 return (
                   <div key={product.id}>
                     <Item
-                      name={product.title}
+                      name={product.name}
                       thumbnailUrl={product.thumbnailUrl}
                       price={product.price}
                       stock={product.stock}
