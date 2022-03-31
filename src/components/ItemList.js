@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Item from './Item'
 import { productList } from '../data/data.js';
+// import Loading from './Loading';
 //css
 import '../css/ItemList.css'
 
@@ -48,7 +49,7 @@ const ItemList = () => {
             }
           </>
         ) : (
-          <p>Cargando productos...</p>
+         <p>Cargando productos...</p>
         ) 
       }
     </div>

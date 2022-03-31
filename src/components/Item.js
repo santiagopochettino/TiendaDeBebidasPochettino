@@ -18,7 +18,7 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
     }
     const finishShop = ()=>{
         onAdd(
-            alert(` Agregaste ${count} botellas de ${name} ! al carrito.`)
+            // alert(` Agregaste ${count} botellas de ${name} ! al carrito.`)
         )
     }
 
@@ -26,7 +26,7 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
     <>
       <div className='ItemContainer'>
         <img className='imgSize' src={thumbnailUrl} alt=""/>
-        <h3 >Nombre: {name}</h3>
+        <h2 >{name}</h2>
         <p>Nro de producto: {id}</p>
         <p>Precio: $ {price}</p>
         <p>Stock: {stock}</p>
