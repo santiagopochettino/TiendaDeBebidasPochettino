@@ -17,13 +17,13 @@ const ItemCount = ({onAdd,thumbnailUrl, stock, name, price,id }) => {
     }
     const finishShop = ()=>{
         onAdd(
-            alert(` Agregaste ${count} botellas de ${name} ! al carrito.`)
+            alert(`Compra exitosa`)
         )
     }
 
   return ( 
       <>
-      <div className='ItemContainer'>
+      <div >
         <img className='imgSize' src={thumbnailUrl} alt=""/>
         <h2 >{name}</h2>
         <div className='countContainer'>
@@ -46,7 +46,7 @@ const ItemCount = ({onAdd,thumbnailUrl, stock, name, price,id }) => {
             <button  className='countContainer__counter--button--finish' 
             onClick={finishShop}
             disabled={stock === 0 ? true : null}>
-            Comprar
+            Finalizar Compra
             </button>
         </div>
     </div>

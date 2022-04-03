@@ -1,10 +1,11 @@
 import React from 'react'
 
-
+//css
+import '../css/HomePage.css'
 const HomePage = () => {
   return (
-    <div>
-        <h1>Inicio</h1>
+    <div className='img-bebidas'>
+       <img src='bebidas.jpeg' alt=''/>
     </div>
   )
 }

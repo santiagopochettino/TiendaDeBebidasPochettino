@@ -3,3 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 } */
+.footer{
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+  
+    background-color: rgb(222, 221, 223);
+    margin-top: 50px;
+}

@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import { BrowserRouter, Routes , Route } from 'react-router-dom';
 //pages
 import Contacto from './pages/Contacto';
+import Detail from './pages/Detail';
 import NotFoundPage from './pages/NotFoundPage';
 import HomePage from './pages/HomePage';
 import Nosotros from './pages/Nosotros';
@@ -25,14 +26,14 @@ function App() {
          <Routes>
            <Route path='/' element={<HomePage/>}/>
            <Route path='/tienda' element={<Tienda/>}/>
+           <Route path='/detalle' element={<Detail/>}/>
            <Route path='/nosotros' element={<Nosotros/>}/>
            <Route path='/contacto' element={<Contacto/>}/>
-           <Route path='/*' element={<NotFoundPage/>} />
+           <Route path='*' element={<NotFoundPage/>} />
          </Routes>
+         <footer className='footer'>Copyright © 2022 - Spoche</footer>
       </BrowserRouter>
-       {/*
-       <ItemDetailContainer id={1} />
-      */}
+      
        
     </div>
   );

@@ -7,7 +7,7 @@ import '../css/ItemDetail.css'
 
 const ItemDetail = ({ item }) => {
   const onAdd = (count) => {
-    alert(`Has agregado ${count} ${item.name} .`);
+    // alert(`Has agregado ${count} ${item.name} .`);
   };
 
   console.log(item);
@@ -15,13 +15,13 @@ const ItemDetail = ({ item }) => {
     <article className="product-detail">
       <img src={item.thumbnailUrl} alt="" className="product-detail__img  "/>
       <div className="product-detail__info">
-        <h2 className="name">Cart</h2>
+        <h2 className="name">Carrito</h2>
         <ul className="info-grid">
-          <li>Article name:</li>
+          <li className="name-li">Article name:</li>
           <li>{item.name}</li>
-          <li>Price:</li>
+          <li className="name-li">Price:</li>
           <li>$ {item.price}</li>
-          <li>description:</li>
+          <li className="name-li">description:</li>
           <li>{item.description}</li>
         </ul>
         <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />

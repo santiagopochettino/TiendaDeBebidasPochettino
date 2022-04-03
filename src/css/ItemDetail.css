@@ -25,20 +25,22 @@
   }
   
   .product-detail__info p {
-    margin: 30px 0;
+    margin: 20px 0;
     text-align: left;
   }
   .info-grid {
     display: grid;
     grid-template: 1fr/1fr 1fr;
-    gap: 20px 0;
+    gap: 10px 0;
   }
   
   .info-grid li {
     text-align: left;
     list-style: none;
   }
-  
+  .name-li{
+    font-weight: bold;
+  }
   @media only screen and (min-width: 800px) {
     .product-detail {
       flex-direction: row;
