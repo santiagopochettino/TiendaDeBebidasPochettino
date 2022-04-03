@@ -23,7 +23,7 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
     }
 
   return (
-    <>
+    <div className='ItemC'>
       <div className='ItemContainer'>
         <img className='imgSize' src={thumbnailUrl} alt=""/>
         <h2 >{name}</h2>
@@ -57,7 +57,7 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
 
         </div> 
    
-      </>
+      </div>
   );
 };
 

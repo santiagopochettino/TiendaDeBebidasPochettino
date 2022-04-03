@@ -1,13 +1,17 @@
+.ItemC{
+    display: grid;
+    grid-template-rows:  repeat(3);
+    grid-template-columns: repeat(3);
+    gap: 20px 0;
 
-.ItemListContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+
 }
+/* 
+.ItemListContainer{
+   
+}  */
 
 .ItemContainer{
-    flex-wrap: wrap;
     width: 250px;
     margin-top: 10px;
     margin-left: 10px;

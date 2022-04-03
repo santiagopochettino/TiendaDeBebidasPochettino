@@ -29,4 +29,8 @@ header .main-header{
   justify-content: center;
   align-items: center;
   }
-  
+  .btn-link a {
+    list-style-type: none;
+    color: #fff;
+    text-decoration: none;
+  }
