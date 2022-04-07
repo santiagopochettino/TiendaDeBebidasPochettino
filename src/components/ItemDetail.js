@@ -5,12 +5,12 @@ import '../css/ItemDetail.css'
 
 //ItemDetail recibe los datos del producto encontrado por id previamente y los muestra
 
-const ItemDetail = ({ item }) => {
-  const onAdd = (count) => {
-    // alert(`Has agregado ${count} ${item.name} .`);
+const ItemDetail = ({ item, action }) => {
+  const onAdd = () => {
+    // alert(`Has agregado ${item.name} .`);
   };
 
-  console.log(item);
+  
   return (
     <article className="product-detail">
       <img src={item.thumbnailUrl} alt="" className="product-detail__img  "/>
@@ -21,10 +21,12 @@ const ItemDetail = ({ item }) => {
           <li>{item.name}</li>
           <li className="name-li">Price:</li>
           <li>$ {item.price}</li>
+          <li className="name-li">Cantidad:</li>
+          <li> </li>
           <li className="name-li">description:</li>
           <li>{item.description}</li>
         </ul>
-        <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+        <ItemCount stock={item.stock} initial={1} onClick={action} />
       </div>
     </article>
   );

@@ -7,6 +7,7 @@ import '../css/ItemList.css'
 
 const ItemList = () => {
   const [products, setProducts] = useState([]);
+  const [contador, setContador] = useState(0)
 
   const getProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -25,6 +26,10 @@ const ItemList = () => {
   useEffect(() => {
     getProductsData();
   }, );
+  const agregarClick = (e) => {
+    e.stopPropagation()
+    setContador(contador + 1)
+}
 
   return (
     <div className="product-list-container">
@@ -35,7 +40,7 @@ const ItemList = () => {
             {
               products.map((product) => {
                 return (
-                  <div key={product.id}>
+                  <div key={product.id} action={agregarClick}>
                     <Item
                       name={product.name}
                       thumbnailUrl={product.thumbnailUrl}

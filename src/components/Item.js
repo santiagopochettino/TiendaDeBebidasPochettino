@@ -18,7 +18,7 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
     }
     const finishShop = ()=>{
         onAdd(
-            // alert(` Agregaste ${count} botellas de ${name} ! al carrito.`)
+            alert(` Agregaste ${count} botellas de ${name} ! al carrito.`)
         )
     }
 
