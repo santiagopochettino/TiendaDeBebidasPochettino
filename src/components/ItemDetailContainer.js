@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { getProductById } from '../data/getData.js';
+import { useParams } from 'react-router-dom';
+import { productList } from '../data/data';
 import ItemDetail from './ItemDetail';
 
 
-const ItemDetailContainer = ({ id }) => {
-  const [product, setProduct] = useState(null);
+const ItemDetailContainer = () => {
+  const [product, setProduct] = useState({});
+  const {id} = useParams()
+
+  const myProducts = () =>{
+    return new Promise ( (resolve, reject) =>{
+      return resolve(productList);
+    })
+  }
 
   useEffect(() => {
-    getProductById(Number(id), setProduct);
-    console.log(product);
-  }, [id]);
+    myProducts().then( (res) =>{
+      const productId = res.find(e => e.id == id)
+      setProduct(productId)
+    })
+   
+  }, []);
   
   return (
     <section className="item-detail-container">

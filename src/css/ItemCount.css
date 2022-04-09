@@ -6,10 +6,7 @@
 
 
 }
-/* 
-.ItemListContainer{
-   
-}  */
+
 
 .ItemContainer{
     width: 250px;
@@ -83,10 +80,31 @@
     margin-top: 55px;
     margin-left: -120px;
     border-radius: 5px;
+    margin-top: 80px;
+   
     
     
+  }
+  .countContainer__counter--button--detalle{
+    background-color: #0ac1a8;
+    width: 100px;
+    height: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    margin-left: 35px;
+  }
+  .countContainer__counter--button--detalle >*{
+    color: #fff;
+    text-decoration: none;
   }
   .countContainer__counter--h4{
     color: #555;
     text-align: center;
+  }
+  .detalle  {
+    list-style-type: none;
+    text-decoration: none ;
+    color: #fff;
+  
   }

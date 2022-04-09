@@ -19,10 +19,6 @@ function NavBar  ()  {
         url:'/tienda'
     },
     {
-        title:'Detalle',
-        url:'/detalle'
-    },
-    {
         title:'Nosotros',
         url:'/nosotros'
     },

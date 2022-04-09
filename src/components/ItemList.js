@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Item from './Item'
 import { productList } from '../data/data.js';
 // import Loading from './Loading';
+import CircularProgress from '@mui/material/CircularProgress';
 //css
 import '../css/ItemList.css'
 
@@ -54,7 +55,7 @@ const ItemList = () => {
             }
           </>
         ) : (
-         <p>Cargando productos...</p>
+         <><CircularProgress/></>
         ) 
       }
     </div>

@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import {Link} from 'react-router-dom'
 
 //css
 import '../css/ItemCount.css'
@@ -53,6 +53,9 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
             Agregar
             </button>
         </div>
+        <button  className='countContainer__counter--button--detalle '  >
+            <Link to={`/detalle/${id}`}>Detalle</Link>
+        </button>
     </div>
 
         </div> 

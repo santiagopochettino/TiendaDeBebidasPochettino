@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
+
 
 import '../css/ItemDetail.css'
 
 //ItemDetail recibe los datos del producto encontrado por id previamente y los muestra
 
-const ItemDetail = ({ item, action }) => {
+const ItemDetail = ({ item }) => {
+  const [contador, setContador] = useState(0);
   const onAdd = () => {
-    // alert(`Has agregado ${item.name} .`);
+    setContador(item)
   };
 
   
@@ -26,7 +29,11 @@ const ItemDetail = ({ item, action }) => {
           <li className="name-li">description:</li>
           <li>{item.description}</li>
         </ul>
-        <ItemCount stock={item.stock} initial={1} onClick={action} />
+        {
+          contador? 
+          <div><Link to={`/cart`}><button  className='countContainer__counter--button--finish' >Ir al carrito</button></Link>  </div> :
+          <ItemCount stock={item.stock} initial={1} onAdd={() => onAdd()}></ItemCount>
+        }
       </div>
     </article>
   );
