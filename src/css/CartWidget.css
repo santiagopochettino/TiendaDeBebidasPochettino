@@ -4,3 +4,13 @@
     align-items: center;
     
 }
+.cart-icon * {
+    color: black ;
+    font-size: 30px!important;
+   
+    
+}
+.cart-icon:hover * {
+    transform: scale(1.05);
+   
+}

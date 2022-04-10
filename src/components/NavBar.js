@@ -2,13 +2,19 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Logo from './Logo';
 import CartWidget from '../components/CartWidget'
+//react router dom
 import { Link } from 'react-router-dom'
+//context
+// import ThemeContext from '../context/ThemeContext';
 
 
 //css
 import '../css/NavBar.css'
 
 function NavBar  ()  {
+    // const {lightTheme} = useContext(ThemeContext)
+    // console.log("light state : ", lightTheme)
+   
     const pages = [
     {
         title:'Inicio',
@@ -65,6 +71,7 @@ function NavBar  ()  {
                             <Button className='btn-link' variant="contained" aria-label="outlined primary button group" >
                                 <Link to={pages.url}>{pages.title}</Link>
                             </Button>
+                            
                             </li>
                        
                     )
@@ -74,7 +81,10 @@ function NavBar  ()  {
 
                
             </ul>
-            <CartWidget/>
+          <div className='CartBar'>
+               <Link to={'/cart'}><CartWidget/></Link>
+          </div>
+            
            
            </nav>
           

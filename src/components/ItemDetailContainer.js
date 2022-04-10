@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
   
   return (
     <section className="item-detail-container">
-      {product ? <ItemDetail item={product} /> : <p>Obteniendo producto...</p>}
+      {product ? <ItemDetail  item={product} /> : <p>Obteniendo producto...</p>}
     </section>
   );
 };
