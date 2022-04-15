@@ -21,8 +21,6 @@ const CartProvider = ({children}) => {
     const deleteProduct = (product) => {
       setCartProducts(cartProducts.filter( cartProduct => cartProduct.id !== product.id))
   }
-
-
     const data = {
       addProductToCart,
       calculeTotalPrice,
@@ -30,16 +28,11 @@ const CartProvider = ({children}) => {
     }
 
   return (
-    <>
     <CartContext.Provider value={data}>
         {children}
     </CartContext.Provider>
-
-    </>
   )
 }
 
-//Cuando ya tenemos utilizado 1 componente con export default 
-//al otro lo definimos como un export y {}
 export {CartProvider}
 export default CartContext

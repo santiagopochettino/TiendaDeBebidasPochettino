@@ -1,5 +1,5 @@
 //components
-// import  {useContext} from 'react';
+// import  { useContext} from 'react';
 import NavBar from './components/NavBar';
 //react router dom 
 import { BrowserRouter, Routes , Route } from 'react-router-dom';
@@ -14,8 +14,9 @@ import Carrito from './pages/Carrito';
 //ccs
 import './css/App.css';
 //context
-import { CartProvider } from './context/CartContext';
-// import { CartContext } from './context/CartContext';
+import { CartProvider} from './context/CartContext';
+// import {CartContext } from './context/CartContext';
+
 
 function App() {
   // const {cartProducts} = useContext( CartContext);

@@ -82,7 +82,7 @@ function NavBar  ()  {
                
             </ul>
           <div className='CartBar'>
-               <Link to={'/cart'}><CartWidget/></Link>
+            <CartWidget/>
           </div>
             
            
