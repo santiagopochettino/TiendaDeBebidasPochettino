@@ -1,12 +1,14 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import {Link} from 'react-router-dom'
+import CartContext from '../context/CartContext'
 
 //css
 import '../css/ItemCount.css'
 
 const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
-
-  const initial = 1
+   const {cartProducts, addProductToCart} = useContext(CartContext)
+   console.log("cart products: ", cartProducts)
+   const initial = 1
    const [count, setCount]= useState(initial);
    const addCount = ()=>{
       
@@ -17,9 +19,9 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
         setCount(count - 1)
     }
     const finishShop = ()=>{
-        onAdd(
-            alert(` Agregaste ${count} botellas de ${name} ! al carrito.`)
-        )
+        // onAdd(
+        //     alert(` Agregaste ${count} botellas de ${name} ! al carrito.`)
+        // )
     }
 
   return (
