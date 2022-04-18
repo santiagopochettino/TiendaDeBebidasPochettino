@@ -15,11 +15,11 @@ import Carrito from './pages/Carrito';
 import './css/App.css';
 //context
 import { CartProvider} from './context/CartContext';
-// import {CartContext } from './context/CartContext';
+
 
 
 function App() {
-  // const {cartProducts} = useContext( CartContext);
+  
   
   return (
     <div className='App'>
@@ -31,7 +31,7 @@ function App() {
             <Route path='/tienda' element={<Tienda/>}/>
             <Route path='/detalle/:id' element={<Detail/>}/>
             <Route path='/nosotros' element={<Nosotros/>}/>
-            <Route path='/contacto' element={<Contacto/>}/>
+            <Route path='/cart' element={<Carrito/>}/>
             <Route path='/cart' element={<Carrito/>}/>
             <Route path='*' element={<NotFoundPage/>} />
          </Routes>

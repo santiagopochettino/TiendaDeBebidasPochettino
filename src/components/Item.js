@@ -7,7 +7,7 @@ import '../css/ItemCount.css'
 
 const Item = ({name, onAdd, thumbnailUrl, stock, price,id}) => {
    const {cartProducts, addProductToCart} = useContext(CartContext)
-   console.log("cart products: ", cartProducts)
+  
    const initial = 1
    const [count, setCount]= useState(initial);
    const addCount = ()=>{

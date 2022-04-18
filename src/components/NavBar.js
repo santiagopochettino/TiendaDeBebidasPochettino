@@ -29,8 +29,8 @@ function NavBar  ()  {
         url:'/nosotros'
     },
     {
-        title:'Contacto',
-        url:'/contacto'
+        title:'Cart',
+        url:'/cart'
     }
     ]
     return( 
