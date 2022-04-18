@@ -6,12 +6,12 @@ const CartProvider = ({children}) => {
     const [cartProducts, setCartProducts] = useState([]);
 
     const addProductToCart = (product)=>{
-      let exist = cartProducts.find(cartProduct => cartProduct.id === product.id)
-        !exist && setCartProducts(cartProducts => [...cartProducts, product])
+    if(cartProducts.find(cartProduct => cartProduct.id === product.id)){
+    }else {
+        setCartProducts( cartProducts => [...cartProducts, product])
     }
-    const calculeTotalPrice = ()=>{
-      let total = 0
-
+}
+console.log("cart products; " , cartProducts);
       cartProducts.map( (cartProduct) => {
          total = cartProduct.price + total
       })
