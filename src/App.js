@@ -14,7 +14,7 @@ import Carrito from './pages/Carrito';
 //ccs
 import './css/App.css';
 //context
-import { CartProvider} from './context/CartContext';
+import {CartContextProvider} from './context/CartContext';
 
 
 
@@ -23,7 +23,7 @@ function App() {
   
   return (
     <div className='App'>
-    <CartProvider> 
+    <CartContextProvider> 
       <BrowserRouter>
          <NavBar/>
          <Routes>
@@ -37,7 +37,7 @@ function App() {
          </Routes>
          <footer className='footer'>Copyright © 2022 - Spoche</footer>
       </BrowserRouter>
-     </CartProvider> 
+     </CartContextProvider> 
        
        
     </div>

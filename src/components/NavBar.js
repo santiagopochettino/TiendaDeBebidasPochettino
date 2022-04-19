@@ -65,9 +65,9 @@ function NavBar  ()  {
                         </Button>     
                     </li> */}
 
-                {pages.map( (pages)=>{
+                {pages.map( (pages, index)=>{
                     return(
-                        <li>
+                        <li key ={index}>
                             <Button className='btn-link' variant="contained" aria-label="outlined primary button group" >
                                 <Link to={pages.url}>{pages.title}</Link>
                             </Button>

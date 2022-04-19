@@ -1,95 +1,66 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
-const CartContext = createContext();
+const CartContext = createContext([]);
 
-const CartProvider = ({children}) =>{
-    const [cartProducts, setCartProducts] = useState([]);
-    const [cuantosProductos, setCuantosProductos] = useState();
-    //funciones
-    const addProductToCart = (product, productQuantity) =>{
-        //reviso si ya existe el producto en el carrito
-        const indiceEncontrado = cartProducts.findIndex((producto)=>{
-            return producto.id === product.id;
-        })//si no existe lo agrego
-        if(indiceEncontrado === -1){
-            product.cantidad = productQuantity;
-            setCartProducts(cartProducts => [...cartProducts, product]);
-            cartCantProductos();
-        }else{//si no, valido que no se quiera agrega más de lo que hay en stock
-            if (product.stock < (product.cantidad + productQuantity)){
-            }else{//si da el stock, sumo
-                cartProducts[indiceEncontrado].cantidad += productQuantity;
-                cartCantProductos();
-            }
+
+export function useCartContext(){ return useContext(CartContext)};
+
+export function CartContextProvider({ children }){
+    
+    
+
+    const [cartList, setCartList] = useState([]);
+
+    console.log({cartList})
+
+    function agregarAlCarrito(item){
+        
+        if ( isInCart(item.id) ) {
+
+           const prod = cartList.find((p) => p.id === item.id);
+           const { cantidad } = prod;
+           
+           prod.cantidad = item.cantidad + cantidad;
+            const newCart = [ ...cartList ];
+            setCartList(newCart);
+
+        } else {
+
+            setCartList([ ...cartList, item])
         }
+        
     }
-    const cartTotal = () => {
-        //precio total de los productos en el carrito considerando sus cantidades
-        let total = 0;
-        cartProducts.map((product)=>{
-            total = total + product.price*product.cantidad;
-        });
-        return total
+
+    function emptyCart(){
+        setCartList([]);
     }
-    const cartLength = () => {
-        //saber el largo del array para el cartwidget
-        let largo = cartProducts.length;
-        return largo
+
+    const isInCart = (id) =>{
+        return cartList.some( prod => prod.id === id)
+        
     }
-    const cartCantProductos = () => {
-        let cantidad = 0;
-        for(const producto of cartProducts){
-            cantidad = cantidad + producto.cantidad;
-        }
-        setCuantosProductos(cantidad);
+
+
+    const deleteOne = (id) => {
+        setCartList(cartList.filter(p => p.id !== id));
     }
-    const restarUno = (id) => {
-        //primero ubico el indice del producto dentro del array
-        const indiceEncontrado = cartProducts.findIndex((producto)=>{
-            return producto.id === id;
-        })
-        if(indiceEncontrado === -1){
-            return;
-        }else{
-            //para que reste solo hasta 0 y no aparezcan números negativos
-            if (cartProducts[indiceEncontrado].cantidad>1){
-                cartProducts[indiceEncontrado].cantidad -= 1;
-                cartCantProductos();
-            }
-        }
+
+    const sumaTotal = () => {
+       return cartList.reduce((acum, item) => acum = acum + (item.price * item.cantidad), 0)
     }
-    const removeItem = (id) => {
-        //primero ubico el indice del producto dentro del array
-        const indiceEncontrado = cartProducts.findIndex((producto)=>{
-            return producto.id === id;
-        })
-        //luego elimino ese producto utilizando el indice encontrado, con splice
-        cartProducts.splice(indiceEncontrado, 1);
-        cartCantProductos();
-    }
-    const cleanCart = () => {
-        setCartProducts([]);
-        cartCantProductos();
-    }
-    //data a exportar
-    const data = {
-        cartProducts,
-        cuantosProductos,
-        addProductToCart,
-        cartCantProductos,
-        cartLength,
-        cartTotal,
-        restarUno,
-        removeItem,
-        cleanCart
-    }
-    //return
-    return(
-        <CartContext.Provider value={data}>
-            {children}
-        </CartContext.Provider>
-    )
+
+    const cantidad = () => {
+        return cartList.reduce((acum, item) => acum += item.cantidad, 0)
+    } 
+
+    return <CartContext.Provider value={{
+        cartList,
+        agregarAlCarrito,
+        emptyCart, 
+        deleteOne,
+        sumaTotal,
+        cantidad
+    }}>
+        { children }
+    </CartContext.Provider>
 }
-
-export {CartProvider}
-export default CartContext
