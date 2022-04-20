@@ -1,43 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
-import {useCartContext} from "../context/CartContext"
+import {CartContextProvider} from "../context/CartContext"
 
 
 import '../css/ItemDetail.css'
 
 //ItemDetail recibe los datos del producto encontrado por id previamente y los muestra
 
-const ItemDetail = ({  prod, setLoading }) => {
-  const [ contador, setContador ] = useState(0)
-    
-  const { agregarAlCarrito } = useCartContext()
+const ItemDetail = ({ item}) => {
+  const [ contador, setContador ] = useState(false)
+  const { addProductToCart } = useContext(CartContextProvider)
 
   function onAdd(cant){
       setContador(cant)
-      agregarAlCarrito( {...prod, cantidad: cant} )
-      setLoading(false)
+      addProductToCart(item )
+      
   }
   
   return (
     <article className="product-detail">
-      <img src={prod.thumbnailUrl} alt="" className="product-detail__img  "/>
+      <img src={item.thumbnailUrl} alt="" className="product-detail__img  "/>
       <div className="product-detail__info">
         <h2 className="name">Carrito</h2>
         <ul className="info-grid">
           <li className="name-li">Article name:</li>
-          <li>{prod.name}</li>
+          <li>{item.name}</li>
           <li className="name-li">Price:</li>
-          <li>$ {prod.price}</li>
+          <li>$ {item.price}</li>
           <li className="name-li">Cantidad:</li>
           <li> </li>
           <li className="name-li">description:</li>
-          <li>{prod.description}</li>
+          <li>{item.description}</li>
         </ul>
         {
           contador? 
           <div><Link to={`/cart`}><button  className='countContainer__counter--button--finish' >Ir al carrito</button></Link>  </div> :
-          <ItemCount stock={prod.stock} initial={1} onAdd={() => onAdd()}></ItemCount>
+          <ItemCount stock={item.stock} initial={1} onAdd={() => onAdd()}></ItemCount>
         }
       </div>
     </article>

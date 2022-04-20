@@ -39,15 +39,15 @@ const ItemList = () => {
         products.length ? ( 
           <>
             {
-              products.map((product) => {
+              products.map((item) => {
                 return (
-                  <div key={product.id} action={agregarClick}>
+                  <div key={item.id} action={agregarClick}>
                     <Item
-                      name={product.name}
-                      thumbnailUrl={product.thumbnailUrl}
-                      price={product.price}
-                      stock={product.stock}
-                      id={product.id}
+                      name={item.name}
+                      thumbnailUrl={item.thumbnailUrl}
+                      price={item.price}
+                      stock={item.stock}
+                      id={item.id}
                     />
                   </div>
                 );
