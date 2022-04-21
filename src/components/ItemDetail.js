@@ -3,19 +3,22 @@ import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import {CartContextProvider} from "../context/CartContext"
 
-
 import '../css/ItemDetail.css'
 
 //ItemDetail recibe los datos del producto encontrado por id previamente y los muestra
 
 const ItemDetail = ({ item}) => {
-  const [ contador, setContador ] = useState(false)
-  const { addProductToCart } = useContext(CartContextProvider)
+  const [ contador, setContador ] = useState(0)
+  const [compra, setCompra] = useState(false)
 
-  function onAdd(cant){
-      setContador(cant)
-      addProductToCart(item )
-      
+  const { agregarAlCarrito } = useContext(CartContextProvider)
+
+  function onAdd(count){
+      setContador(count)
+      setCompra(true)
+  }
+  function handledClick(){
+    agregarAlCarrito(item)
   }
   
   return (
@@ -34,9 +37,9 @@ const ItemDetail = ({ item}) => {
           <li>{item.description}</li>
         </ul>
         {
-          contador? 
-          <div><Link to={`/cart`}><button  className='countContainer__counter--button--finish' >Ir al carrito</button></Link>  </div> :
-          <ItemCount stock={item.stock} initial={1} onAdd={() => onAdd()}></ItemCount>
+          compra? 
+          <div><Link to={`/cart`}><button  className='countContainer__counter--button--finish' onClick={handledClick} >Ir al carrito</button></Link>  </div> :
+          <ItemCount stock={item.stock} initial={1} onAdd={ onAdd}></ItemCount>
         }
       </div>
     </article>

@@ -16,8 +16,8 @@ const ItemCount = ({onAdd,thumbnailUrl, stock, name, price,id }) => {
         setCount(count - 1)
     }
     const finishShop = ()=>{
-        onAdd(
-            alert(`Compra exitosa`)
+        onAdd(count,
+            alert(`Compra exitosa ${count}`)
         )
     }
 

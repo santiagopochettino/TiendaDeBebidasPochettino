@@ -1,35 +1,21 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
 
-const CartContext = createContext([]);
-
-
-export function useCartContext(){ return useContext(CartContext)};
+export const CartContext = createContext([]);
 
 export function CartContextProvider({ children }){
     
-    
-
     const [cartList, setCartList] = useState([]);
 
-    console.log({cartList})
-
+   
+    const getId = (id)=> cartList.find(product=>product.id === id  ) || null
     function agregarAlCarrito(item){
-        
-        if ( isInCart(item.id) ) {
-
-           const prod = cartList.find((p) => p.id === item.id);
-           const { cantidad } = prod;
-           
-           prod.cantidad = item.cantidad + cantidad;
-            const newCart = [ ...cartList ];
-            setCartList(newCart);
-
-        } else {
-
-            setCartList([ ...cartList, item])
-        }
-        
+        const idCart = getId(item.id)
+        if ( !idCart ) {
+            setCartList([...cartList, item])
+        } 
     }
+    console.log(cartList, "soy cart List")
+
 
     function emptyCart(){
         setCartList([]);
@@ -59,7 +45,8 @@ export function CartContextProvider({ children }){
         emptyCart, 
         deleteOne,
         sumaTotal,
-        cantidad
+        cantidad,
+        isInCart
     }}>
         { children }
     </CartContext.Provider>

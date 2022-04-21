@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { productList } from '../data/data';
 import ItemDetail from './ItemDetail';
 
-
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
   const {id} = useParams()
@@ -21,7 +20,7 @@ const ItemDetailContainer = () => {
     })
    
   }, []);
-  
+  console.log(product, "soy product")
   return (
     <section className="item-detail-container">
       {product ? <ItemDetail  item={product} /> : <p>Obteniendo producto...</p>}
