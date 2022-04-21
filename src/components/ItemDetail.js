@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
-import {CartContextProvider} from "../context/CartContext"
+import {CartContext} from "../context/CartContext"
 
 import '../css/ItemDetail.css'
 
@@ -11,14 +11,15 @@ const ItemDetail = ({ item}) => {
   const [ contador, setContador ] = useState(0)
   const [compra, setCompra] = useState(false)
 
-  const { agregarAlCarrito } = useContext(CartContextProvider)
+  const { agregarAlCarrito } = useContext(CartContext)
 
   function onAdd(count){
       setContador(count)
       setCompra(true)
+      
   }
   function handledClick(){
-    agregarAlCarrito(item)
+    agregarAlCarrito(item, contador)
   }
   
   return (
