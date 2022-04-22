@@ -32,7 +32,6 @@ function App() {
             <Route path='/detalle/:id' element={<Detail/>}/>
             <Route path='/nosotros' element={<Nosotros/>}/>
             <Route path='/cart' element={<Carrito/>}/>
-            <Route path='/cart' element={<Carrito/>}/>
             <Route path='*' element={<NotFoundPage/>} />
          </Routes>
          <footer className='footer'>Copyright © 2022 - Spoche</footer>
