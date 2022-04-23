@@ -21,7 +21,7 @@ export function CartContextProvider({ children }){
         setTotal(total + count )
         return true
     }
-    console.log('cart list', cartList)
+    
 
     function emptyCart(){
         setCartList([]);
@@ -40,6 +40,7 @@ export function CartContextProvider({ children }){
     const cantidad = () => {
         return cartList.reduce((acum, item) => acum += item.cantidad, 0)
     } 
+    
     return <CartContext.Provider value={{
         cartList,
         agregarAlCarrito,

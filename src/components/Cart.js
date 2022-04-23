@@ -35,6 +35,9 @@ const Cart = () =>{
         <Button className='btn-link btnVaciarCart'  onClick={handledClear} variant="contained" aria-label="outlined primary button group" >
            Vaciar Carrito
         </Button>
+        <Button className='btn-link btnVaciarCart'  onClick={handledClear} variant="contained" aria-label="outlined primary button group" >
+        <Link to={'/tienda'}>Seguir Comprando</Link>
+        </Button>
         <Button className='btn-link btnVaciarCart'  onClick={finalizarCompra} variant="contained" aria-label="outlined primary button group" >
           <Link to={'/'}>Finalizar Compra</Link>
         </Button>
