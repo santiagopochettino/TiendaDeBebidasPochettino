@@ -16,9 +16,7 @@ const ItemCount = ({onAdd,thumbnailUrl, stock, name, price,id }) => {
         setCount(count - 1)
     }
     const finishShop = ()=>{
-        onAdd(count,
-            alert(`Compra exitosa ${count}`)
-        )
+        onAdd(count)
     }
 
   return ( 
@@ -46,7 +44,7 @@ const ItemCount = ({onAdd,thumbnailUrl, stock, name, price,id }) => {
             <button  className='countContainer__counter--button--finish' 
             onClick={finishShop}
             disabled={stock === 0 ? true : null}>
-            Finalizar Compra
+            Comprar
             </button>
         </div>
     </div>

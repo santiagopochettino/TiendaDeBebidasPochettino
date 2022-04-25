@@ -48,6 +48,8 @@ export function CartContextProvider({ children }){
         deleteOne,
         sumaTotal,
         cantidad,
+        setTotal,
+        total,
         isInCart
     }}>
         { children }
