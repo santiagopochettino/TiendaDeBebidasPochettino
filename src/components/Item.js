@@ -15,7 +15,6 @@ const Item = ({name, onAdd, thumbnailUrl, stock, price, id}) => {
       <div className='ItemContainer'>
         <img className='imgSize' src={thumbnailUrl} alt=""/>
         <h2 >{name}</h2>
-        {/* <p>Nro de producto: {id}</p> */}
         <p>Precio: $ {price}</p>
         <p>Stock: {stock}</p>
         

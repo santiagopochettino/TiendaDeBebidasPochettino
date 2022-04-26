@@ -14,7 +14,7 @@ import { addDoc, collection } from 'firebase/firestore';
 
 const Cart = () =>{
 
-    const {cartList, emptyCart, total } = useContext(CartContext)
+    const {cartList, emptyCart, total, totalCompra } = useContext(CartContext)
     const [openModal, setOpenModal] = useState(false)
     const [successOrder, setSuccessOrder] = useState()
     const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const Cart = () =>{
       emptyCart()
     }
     const SeguirComprando = ()=>{
-      alert('SeguirComprando')
+     
     }
     // const finalizarCompra = ()=>{
     //   alert('Compra exitosa! finalizarCompra')
@@ -92,7 +92,8 @@ const Cart = () =>{
       <div>
         <CartItem items={cartList}/>
         <div>
-           <h2>  Total :  $"Aqui va el total" {total}</h2>
+           <h2>  Cantidad a comprar : {total}</h2>
+           <p>Total de la compra: {totalCompra}</p>
         </div>
 
         <Button className='btn-link btnVaciarCart'  onClick={handledClear} variant="contained" aria-label="outlined primary button group" >

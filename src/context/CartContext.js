@@ -6,11 +6,15 @@ export function CartContextProvider({ children }){
     
     const [cartList, setCartList] = useState([]);
     const [total, setTotal] = useState(0)
+    const [totalCompra, setTotalCompra] = useState(0)
+
+    
 
     const getId = (id)=> cartList.find(product=>product.id === id  ) || null
     function agregarAlCarrito(item, count){
         const idCart = getId(item.id)
         if ( !idCart ) {
+
             setCartList([...cartList, item])
             item.count = count 
         } else{
@@ -19,6 +23,7 @@ export function CartContextProvider({ children }){
             idCart.count += count 
         }
         setTotal(total + count )
+        setTotalCompra(totalCompra + (item.count * item.price))
         return true
     }
     
@@ -50,6 +55,7 @@ export function CartContextProvider({ children }){
         cantidad,
         setTotal,
         total,
+        totalCompra,
         isInCart
     }}>
         { children }

@@ -20,28 +20,15 @@ const ItemList = () => {
     const productList = productosSnapshot.docs.map((doc) => {
             let product = doc.data()
             product.id = doc.id
-            // console.log("product:", product)
+         
             return product
         }
     )
     return productList
 
 } 
-  // Asi se usaba antes de firebase:
-  // const getProducts = new Promise((resolve, reject) => {
-  //   setTimeout(() => {
-  //     resolve(productList);
-  //   }, 2000);
-  // });
-  // const getProductsData = async () => {
-  //   try {
-  //     const result = await getProducts;
-  //     setProducts(result);
-  //   } catch (error) {
-  //     console.log(error);
-  //     alert('No podemos mostrar los productos en este momento');
-  //   }
-  // };
+
+  
   useEffect(() => {
     setProducts([])
     setLoading(true)
@@ -64,7 +51,7 @@ const ItemList = () => {
 }
 
   return (
-    <div className="product-list-container">
+    <div className="ItemList">
       {
         
         products.length ? ( 

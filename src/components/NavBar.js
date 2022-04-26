@@ -31,7 +31,12 @@ function NavBar  ()  {
     {
         title:'Cart',
         url:'/cart'
-    }
+    },
+    {
+        title:'vodkas',
+        url:'/category/vodkas'
+    },
+
     ]
     return( 
     <div>
@@ -44,26 +49,6 @@ function NavBar  ()  {
             </div>
          
             <ul className="navbar">
-                     {/* <li>
-                        <Button variant="contained" aria-label="outlined primary button group">
-                            <Link to={'/'}>Inicio</Link>
-                        </Button>     
-                    </li>
-                    <li>
-                        <Button variant="contained" aria-label="outlined primary button group">
-                            <Link to={'/tienda'}>Tienda</Link>
-                        </Button>     
-                    </li>
-                    <li>
-                        <Button variant="contained" aria-label="outlined primary button group">
-                            <Link to={'/nosotros'}>Nosotros</Link>
-                        </Button>     
-                    </li>
-                    <li>
-                        <Button variant="contained" aria-label="outlined primary button group">
-                            <Link to={'/contacto'}>Contacto</Link>
-                        </Button>     
-                    </li> */}
 
                 {pages.map( (pages, index)=>{
                     return(
@@ -77,9 +62,6 @@ function NavBar  ()  {
                     )
                 })}
 
-
-
-               
             </ul>
           <div className='CartBar'>
             <CartWidget/>
