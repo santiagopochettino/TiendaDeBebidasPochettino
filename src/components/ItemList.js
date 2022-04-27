@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Item from './Item'
-// import { productList } from '../data/data.js';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from 'react-router-dom'
 //FireBase
@@ -38,7 +37,7 @@ const ItemList = () => {
         })
     }, [category])
     const filterProductByCategory = (array , category) => {
-      return array.map( (product, i) => {
+      return array.map( (product) => {
           if(product.category === category) {
              return setProducts(products => [...products, product]);
           }

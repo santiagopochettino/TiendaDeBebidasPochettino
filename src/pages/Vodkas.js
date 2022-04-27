@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import Item from '../components/Item'
+import CircularProgress from '@mui/material/CircularProgress';
+//fireBase
 import db from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
 
 //css
-import '../css/ItemList.css'
+import '../css/Category.css'
 
 const Vodkas = () => {
   const [vodkas, setVodkas] = useState([])
@@ -24,6 +26,7 @@ const Vodkas = () => {
     return productList
   }
   useEffect(()=>{
+    setProducts([])
     setLoading(true)
     getProducts().then((res)=>{
       setProducts(res)
@@ -38,7 +41,7 @@ const Vodkas = () => {
   const filterByCategory = (productos)=>{
     const produtosFiltrados = []
     productos.map((category)=>{
-      if( category.category == 'vodkas'){
+      if( category.category === 'vodkas'){
         produtosFiltrados.push(category)
         count = count + 1
       }
@@ -48,19 +51,27 @@ const Vodkas = () => {
 
   }
   
-    console.log(products, "products:")
+  
   return (
-    <div >
-      <h2> Vodkas:</h2>
+    <div  className='categoryTitle'>
+      <h2> Sección de Vodka</h2>
       {loading ? 
-      (<div>Cargando</div>)
+      (<div> 
+
+         <CircularProgress/>
+        
+       </div>
+      )
       :
-      (<div>
-        {vodkas ? (vodkas.map((e)=>( <Item  name={e.name}
-                      thumbnailUrl={e.thumbnailUrl}
-                      price={e.price}
-                      stock={e.stock}
-                      id={e.id}/>))): 
+      (<div className="category" >
+        {vodkas ? (vodkas.map((e)=>( <div key={e.id}>
+          <Item 
+              name={e.name}
+              thumbnailUrl={e.thumbnailUrl}
+              price={e.price}
+              stock={e.stock}
+              id={e.id}/>
+        </div>))): 
                       (<div>No hay productos de esa categoria</div>)}
 
       </div>)

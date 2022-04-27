@@ -1,0 +1,8 @@
+.category{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.categoryTitle{
+    text-align: center;
+}

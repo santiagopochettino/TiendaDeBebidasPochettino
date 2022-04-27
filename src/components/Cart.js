@@ -35,9 +35,6 @@ const Cart = () =>{
           total: ''
       }
   )
-  // console.log("order", order)
-
-
 
     const handledClear = ()=>{
       emptyCart()
@@ -45,9 +42,7 @@ const Cart = () =>{
     const SeguirComprando = ()=>{
      
     }
-    // const finalizarCompra = ()=>{
-    //   alert('Compra exitosa! finalizarCompra')
-    // }
+   
     if( !cartList.length){
       return (<div>
            <div className="cartContainer">
@@ -110,7 +105,11 @@ const Cart = () =>{
                 {successOrder ? (
                     <div>
                         <h3>Orden generada correctamente</h3>
+                        <p>Felicidades!</p>
                         <p>Su numero de orden es: {successOrder}</p>
+                        <Button className='btn-link btnVaciarCart'  onClick={ handledClear} variant="contained" aria-label="outlined primary button group" >
+                          Aceptar
+                        </Button>
                     </div>
                 ) : (
                     <>
