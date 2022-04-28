@@ -1,4 +1,17 @@
 .nosotrosDescription{
-    text-align: center;
-
+  text-align: center;
+  height: 780px;
+  background-image: url('../../public/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.nosotrosDescription h2{
+    color: #fff;
+    padding-top: 40px;
+}
+.nosotrosDescription p{
+    color: #fff;
+    font-weight: bolder;
+    margin-top: 30px;
+    
 }

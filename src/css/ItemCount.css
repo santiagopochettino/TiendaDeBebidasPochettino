@@ -16,6 +16,7 @@
     border-radius: 5px;
     text-align: center;
     padding: 50px;
+    max-height: 470px;
 }
 .ItemContainer p{
     font-weight: bold;
@@ -23,6 +24,7 @@
 }
 .imgSize{
     max-height: 300px;
+    margin-left: -15px;
 }
 
 .countContainer__counter{

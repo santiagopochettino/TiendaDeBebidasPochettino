@@ -51,14 +51,17 @@ const ItemList = () => {
 
   return (
     <div className="ItemList">
+      
+         
       {
-        
+       
         products.length ? ( 
           <>
             {
               products.map((item) => {
                 return (
                   <div key={item.id} action={agregarClick}>
+                    
                     <Item
                       name={item.name}
                       thumbnailUrl={item.thumbnailUrl}
@@ -72,7 +75,10 @@ const ItemList = () => {
             }
           </>
         ) : (
-         <><CircularProgress/></>
+         <div className='ItemListTitle'> 
+         <h2>Cargando catalogo de bebidas</h2>
+         <CircularProgress/>
+         </div>
         ) 
       }
     </div>

@@ -41,7 +41,7 @@ const Vodkas = () => {
   const filterByCategory = (productos)=>{
     const produtosFiltrados = []
     productos.map((category)=>{
-      if( category.category === 'vodkas'){
+      if( category.category == 'vodkas'){
         produtosFiltrados.push(category)
         count = count + 1
       }
