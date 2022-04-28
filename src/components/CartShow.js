@@ -16,7 +16,6 @@ const CartShow = ({items}) => {
         <h2 >{items.name}</h2>
         <p>Cantidad: {items.count}</p>
         <p>Precio: $ {items.price}</p>
-        <p>Stock: {items.stock}</p>
         <p>Total: $ {items.count * items.price}</p>
       </div>
       </div> 

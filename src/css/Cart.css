@@ -4,3 +4,10 @@
 .btnVaciarCart{
     margin-left: 100px!important;
 }
+.cartContainerImgs img{
+ margin-top: 40px;
+ margin-left: 10px;
+ height: 320px;
+ border-radius: 5px;
+
+}

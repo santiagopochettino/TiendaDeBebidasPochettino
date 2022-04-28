@@ -51,6 +51,11 @@ const Cart = () =>{
            <Button className='btn-link' variant="contained" aria-label="outlined primary button group" >
            <Link to={'/tienda'}>Tienda</Link>
            </Button>
+           <div className="cartContainerImgs">
+                <img src="drink-01.jpg" alt=""/>
+                <img src="drink-02.jpg" alt=""/>
+                <img src="drink-03.jpg" alt=""/>
+           </div>
            </div>
         </div> )
     }
