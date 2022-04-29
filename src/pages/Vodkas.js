@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Item from '../components/Item'
 import CircularProgress from '@mui/material/CircularProgress';
+import { useParams } from 'react-router-dom';
 //fireBase
 import db from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -10,11 +11,13 @@ import '../css/Category.css'
 
 const Vodkas = () => {
   const [vodkas, setVodkas] = useState([])
-  let count = 0
-  const [loading, setLoading]= useState(true)
   const [products , setProducts ] = useState([])
+  const [loading, setLoading]= useState(true)
+  let count = 0
+ 
   const getProducts = async()=>{
     const itemsCollection = collection(db,'productos')
+    
     const productosSnapshot = await getDocs(itemsCollection)
     const productList = productosSnapshot.docs.map((doc) => {
             let product = doc.data()
@@ -41,7 +44,7 @@ const Vodkas = () => {
   const filterByCategory = (productos)=>{
     const produtosFiltrados = []
     productos.map((category)=>{
-      if( category.category == 'vodkas'){
+      if( category.category === 'vodkas'){
         produtosFiltrados.push(category)
         count = count + 1
       }

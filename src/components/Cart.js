@@ -48,7 +48,7 @@ const Cart = () =>{
            <div className="cartContainer">
            <h2>¿No hay productos en el carrito?</h2>
            <p>Click en el botón para continuar comprando!</p>
-           <Button className='btn-link' variant="contained" aria-label="outlined primary button group" >
+           <Button className='btn-link' variant="contained" color="success" >
            <Link to={'/tienda'}>Tienda</Link>
            </Button>
            <div className="cartContainerImgs">
@@ -89,22 +89,21 @@ const Cart = () =>{
 
 
     return(
-      <div>
+      <div >
         <CartItem items={cartList}/>
-        <div>
-           <h2>  Cantidad a comprar : {total}</h2>
-           <p>Total de la compra: {totalCompra}</p>
-        </div>
-
-        <Button className='btn-link btnVaciarCart'  onClick={handledClear} variant="contained" aria-label="outlined primary button group" >
+        <div className="cart">
+        <Button className='btn-link btnVaciarCart'  onClick={handledClear} variant="contained" color="error" >
            Vaciar Carrito
         </Button>
-        <Button className='btn-link btnVaciarCart'  onClick={SeguirComprando} variant="contained" aria-label="outlined primary button group" >
+        <Button className='btn-link btnVaciarCart'  onClick={SeguirComprando} variant="contained" color="success" >
         <Link to={'/tienda'}>Seguir Comprando</Link>
         </Button>
-        <Button className='btn-link btnVaciarCart'  onClick={setOpenModal} variant="contained" aria-label="outlined primary button group" >
+        <Button className='btn-link btnVaciarCart'  onClick={setOpenModal} variant="contained" color="success" >
          Finalizar Compra
         </Button>
+           <h3>Cantidad: {total} </h3>
+           <h3>Total de la compra: $ {totalCompra}</h3>
+        </div>
         <ModalCustom handleClose={() => setOpenModal(false)} open={openModal}>
                 
                 {successOrder ? (
@@ -112,7 +111,7 @@ const Cart = () =>{
                         <h3>Orden generada correctamente</h3>
                         <p>Felicidades!</p>
                         <p>Su numero de orden es: {successOrder}</p>
-                        <Button className='btn-link btnVaciarCart'  onClick={ handledClear} variant="contained" aria-label="outlined primary button group" >
+                        <Button className='btn-link btnVaciarCart'  onClick={ handledClear} variant="contained" color="success" >
                           Aceptar
                         </Button>
                     </div>

@@ -26,16 +26,13 @@ const ItemDetail = ({ item}) => {
     <article className="product-detail">
       <img src={item.thumbnailUrl} alt="" className="product-detail__img  "/>
       <div className="product-detail__info">
-        <h2 className="name">Carrito</h2>
+        <h2 className="name">Detalle del producto selecionado</h2>
         <ul className="info-grid">
-          <li className="name-li">Article name:</li>
+          <li className="name-li">Articulo:</li>
           <li>{item.name}</li>
-          <li className="name-li">Price:</li>
+          <li className="name-li">Precio:</li>
           <li>$ {item.price}</li>
           <li className="name-li">Cantidad:</li>
-          <li> </li>
-          <li className="name-li">description:</li>
-          <li>{item.description}</li>
         </ul>
         {
           compra? 

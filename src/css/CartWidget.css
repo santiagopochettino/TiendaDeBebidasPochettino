@@ -2,15 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -20px;
     
 }
 .cart-icon * {
-    color: black ;
+    color: black;
     font-size: 30px!important;
+    
    
     
 }
-.cart-icon:hover * {
-    transform: scale(1.05);
+/* .cart-icon:hover * {
+    transform: scale(1.1);
    
-}
+   
+} */

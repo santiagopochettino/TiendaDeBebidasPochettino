@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import '../css/CartShow.css'
 
 const CartShow = ({items}) => {
     const { deleteOne} = useContext(CartContext)
@@ -10,7 +11,7 @@ const CartShow = ({items}) => {
   return (
     <div>
       <div className='ItemC'>
-      <div className='ItemContainer'>
+      <div className='ItemContainer2'>
         <button onClick={handledRemove}>X</button>
         <img className='imgSize' src={items.thumbnailUrl} alt=""/>
         <h2 >{items.name}</h2>

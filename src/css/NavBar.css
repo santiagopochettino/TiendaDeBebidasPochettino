@@ -22,13 +22,9 @@ header .main-header{
   }
   .container-logo{
     display: flex;
+    margin-top: 10px;
   }
-  .container-logo h1{
-  color: #0ac1a8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
+  
   .btn-link a {
     list-style-type: none;
     color: #fff;

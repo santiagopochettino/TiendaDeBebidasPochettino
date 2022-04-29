@@ -1,0 +1,26 @@
+.ItemContainer2 button{
+    color: #fff;
+    background-color: red;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 95%;
+    font-weight: bolder;
+    border: none;
+}
+
+.ItemContainer2 button:hover{
+ transform: scale(1.2);
+}
+.ItemContainer2{
+    width: 250px;
+    box-shadow: 1px 1px 5px #0000002b;
+    border-radius: 5px;
+    text-align: center;
+    padding: 50px;
+    max-height: 470px;
+}
+.ItemContainer2 p{
+    font-weight: bold;
+    margin-top: -5px;
+
+}

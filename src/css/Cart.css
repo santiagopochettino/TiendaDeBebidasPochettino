@@ -1,3 +1,14 @@
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.cart h3{
+    border: 1px solid;
+    padding: 10px;
+   border-radius: 8px;
+}
 .cartContainer {
     text-align: center;
 }
@@ -10,4 +21,4 @@
  height: 320px;
  border-radius: 5px;
 
-}
+}  

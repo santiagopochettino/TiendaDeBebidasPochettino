@@ -26,8 +26,6 @@ const ItemList = () => {
     return productList
 
 } 
-
-  
   useEffect(() => {
     setProducts([])
     setLoading(true)
@@ -48,7 +46,6 @@ const ItemList = () => {
     e.stopPropagation()
     setContador(contador + 1)
 }
-
   return (
     <div className="ItemList">
       

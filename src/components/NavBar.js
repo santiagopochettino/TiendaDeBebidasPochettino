@@ -4,16 +4,11 @@ import Logo from './Logo';
 import CartWidget from '../components/CartWidget'
 //react router dom
 import { Link } from 'react-router-dom'
-//context
-// import ThemeContext from '../context/ThemeContext';
-
 
 //css
 import '../css/NavBar.css'
 
 function NavBar  ()  {
-    // const {lightTheme} = useContext(ThemeContext)
-    // console.log("light state : ", lightTheme)
    
     const pages = [
     {
@@ -29,9 +24,13 @@ function NavBar  ()  {
         url:'/nosotros'
     },
     {
-        title:'vodkas',
+        title:'Vodkas',
         url:'/category/vodkas'
     },
+    {
+        title: 'Carrito',
+        url:'/cart'
+    }
 
     ]
     return( 
@@ -40,8 +39,6 @@ function NavBar  ()  {
            <nav>
            <div className='container-logo'>
              <Logo />
-
-             <h1>Tienda de bebidas Sofía</h1>
             </div>
          
             <ul className="navbar">
@@ -49,7 +46,7 @@ function NavBar  ()  {
                 {pages.map( (pages, index)=>{
                     return(
                         <li key ={index}>
-                            <Button className='btn-link' variant="contained" aria-label="outlined primary button group" >
+                            <Button className='btn-link' variant="contained" color='success' >
                                 <Link to={pages.url}>{pages.title}</Link>
                             </Button>
                             
@@ -59,16 +56,14 @@ function NavBar  ()  {
                 })}
 
             </ul>
-          <div className='CartBar'>
-            <CartWidget/>
-          </div>
+                <div className='CartBar'>
+                    <CartWidget/>
+                </div>
             
-           
            </nav>
           
         </header>
        
-
     </div>
 )};
 
