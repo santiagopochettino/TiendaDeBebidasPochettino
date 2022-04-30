@@ -1,10 +1,8 @@
-//components
-// import  { useContext} from 'react';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 //react router dom 
 import { BrowserRouter, Routes , Route } from 'react-router-dom';
 //pages
-import Contacto from './pages/Contacto';
 import Detail from './pages/Detail';
 import NotFoundPage from './pages/NotFoundPage';
 import HomePage from './pages/HomePage';
@@ -36,7 +34,7 @@ function App() {
             <Route path='/cart' element={<Carrito/>}/>
             <Route path='*' element={<NotFoundPage/>} />
          </Routes>
-         <footer className='footer'>Copyright © 2022 - Spoche</footer>
+         <Footer/>
       </BrowserRouter>
      </CartContextProvider> 
        

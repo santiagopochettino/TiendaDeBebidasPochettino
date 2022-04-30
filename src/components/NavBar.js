@@ -27,10 +27,7 @@ function NavBar  ()  {
         title:'Vodkas',
         url:'/category/vodkas'
     },
-    {
-        title: 'Carrito',
-        url:'/cart'
-    }
+   
 
     ]
     return( 

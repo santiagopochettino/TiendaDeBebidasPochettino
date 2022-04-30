@@ -1,6 +1,6 @@
 .ItemContainer2 button{
     color: #fff;
-    background-color: red;
+    background-color: #c62828;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 95%;
@@ -16,8 +16,9 @@
     box-shadow: 1px 1px 5px #0000002b;
     border-radius: 5px;
     text-align: center;
-    padding: 50px;
-    max-height: 470px;
+    padding: 40px;
+    margin-top: 50px;
+    max-height: 445px;
 }
 .ItemContainer2 p{
     font-weight: bold;

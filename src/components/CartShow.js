@@ -16,7 +16,6 @@ const CartShow = ({items}) => {
         <img className='imgSize' src={items.thumbnailUrl} alt=""/>
         <h2 >{items.name}</h2>
         <p>Cantidad: {items.count}</p>
-        <p>Precio: $ {items.price}</p>
         <p>Total: $ {items.count * items.price}</p>
       </div>
       </div> 

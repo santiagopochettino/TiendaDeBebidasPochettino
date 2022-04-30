@@ -3,14 +3,16 @@
     grid-template-rows:  repeat(3);
     grid-template-columns: repeat(3);
     gap: 20px 0;
-
-
+    margin-top: 10px;
+}
+.ItemC:hover{
+  transform: scale(1.04);
+  cursor: pointer;
 }
 
 
 .ItemContainer{
     width: 250px;
-    margin-top: 10px;
     margin-left: 10px;
     box-shadow: 1px 1px 5px #0000002b;
     border-radius: 5px;
@@ -20,10 +22,11 @@
 }
 .ItemContainer p{
     font-weight: bold;
+    margin: 10px;
 
 }
 .imgSize{
-    max-height: 300px;
+    max-height: 305px;
     margin-left: -15px;
 }
 
@@ -41,7 +44,7 @@
 }
 
 .countContainer__counter--button{
-    color: #0ac1a8;
+    color: #1b5e20;
     width: 100%;
     height: 100%;
     border: 1px solid #555;
@@ -54,7 +57,7 @@
 .countContainer__counter--button:hover {
     border: none;
     color: #fff;
-    background-color:#0ac1a8;;
+    background-color:#1b5e20;
   }
   
   .countContainer__counter--button[disabled] {
@@ -67,11 +70,11 @@
     text-align: center;
     height: 100%;
     padding-top: 10px;
-    color: #0ac1a8;;
+    color: #1b5e20;
     background-color: #fff;
   }
   .countContainer__counter--button--finish{
-    background-color: #0ac1a8;
+    background-color: #1b5e20;
     border: none;
     font-weight: 700;
     font-size: 1rem;
@@ -88,13 +91,17 @@
     
   }
   .countContainer__counter--button--detalle{
-    background-color: #0ac1a8;
+    background-color: #1b5e20;
     width: 100px;
     height: 20px;
     font-weight: 700;
     border-radius: 5px;
     border: none;
-    margin-left: 35px;
+  }
+  .countContainer__counter--button--detalle:hover{
+    background-color: #173e19;
+    cursor: pointer;
+
   }
   .countContainer__counter--button--detalle >*{
     color: #fff;

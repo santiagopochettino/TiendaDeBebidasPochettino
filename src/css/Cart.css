@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
 }
 .cart h3{
     border: 1px solid;
@@ -20,5 +19,50 @@
  margin-left: 10px;
  height: 320px;
  border-radius: 5px;
-
 }  
+.form{
+display: flex;
+flex-direction: column;
+align-items: center;
+box-sizing: border-box;
+}
+.form label, h3{
+font-weight: bolder;
+margin-left: 20px;
+}
+.form input{
+margin-left: 20px;
+}
+.form-control{
+width: 90%;
+}
+.form Button{
+    margin: 20px;
+}
+.formX {
+    color: #fff;
+    background-color: #c62828;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    border: none;
+}
+
+.formX:hover{
+ transform: scale(1.2);
+}
+.CompraExitosa{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.CompraExitosa p{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.CompraExitosa Button {
+    width: 100%;
+}
+.bolder{
+    font-weight: bolder;
+}

@@ -21,6 +21,7 @@ const Cart = () =>{
       name: '',
       phone: '',  
       email: '',
+      address:''
   })
     const [order, setOrder] = useState(
       {
@@ -86,6 +87,7 @@ const Cart = () =>{
           [name]: value
       })
   }
+  
 
 
     return(
@@ -107,34 +109,47 @@ const Cart = () =>{
         <ModalCustom handleClose={() => setOpenModal(false)} open={openModal}>
                 
                 {successOrder ? (
-                    <div>
-                        <h3>Orden generada correctamente</h3>
-                        <p>Felicidades!</p>
-                        <p>Su numero de orden es: {successOrder}</p>
-                        <Button className='btn-link btnVaciarCart'  onClick={ handledClear} variant="contained" color="success" >
+                    <div className="CompraExitosa">
+                        <h2>¡¡ Compra realizada correctamente !!</h2>
+                        <p>¡ Felicidades ! <span className="bolder">{formData.name}</span></p>
+                        <p>El total de su pedido es de  <span className="bolder">$ {totalCompra} .</span></p>
+                        <p>Llegará en las proximas 24 hs.</p>
+                        <p> A <span className="bolder">{formData.address}</span>.</p>
+                        <p>Orden:<span className="bolder">  {successOrder}</span></p>
+                        <p>¡Gracias por su Compra!</p>
+                        <Button className='btn-link'  onClick={ handledClear} variant="contained" color="success" >
                           Aceptar
                         </Button>
                     </div>
-                ) : (
-                    <>
-                        <h2>FORM USUARIO</h2>
+                ) : ( 
+                    <div className="form">
+                         <button className="formX" onClick={()=> setOpenModal(false)}>X</button>
+                        <h3>Para finalizar tu compra completá:</h3>
                         <form onSubmit={handleSubmit}>
-                            <input type="text" name='name' placeholder='Nombre' 
+                            <label for="name">Nombre y Apellido:</label>
+                            <input type="text" name='name' placeholder='Escriba su Nombre Completo...'  required className="form-control"
                                 onChange={handleChange} 
                                 value={formData.name}
                             />
-                            <input type="number" name='phone' placeholder='Telefono' 
+                            <label for="phone">Telefono:</label>
+                            <input type="number" name='phone' placeholder="Escriba su Telefono..." required className="form-control" 
                                 onChange={handleChange} 
                                 value={formData.phone}
                             />
-                            <input type="mail" name='email' placeholder='mail' 
+                            <label for="email">Email:</label>
+                            <input type="mail" name='email' placeholder="Escriba su Email..." required className="form-control"
                                 onChange={handleChange} 
                                 value={formData.email}
                             />
-
-                            <Button type="submit">Enviar</Button>
+                            <label for="name">Dirección:</label>
+                            <input type="text" name='address' placeholder='Escriba su Dirección...'  required className="form-control"
+                                onChange={handleChange} 
+                                value={formData.address}
+                            />
+                            
+                            <Button className='btn-link ' type="submit" variant="contained" color="success">Enviar</Button>
                         </form>
-                    </>
+                    </div>
                 )}
                 
             </ModalCustom>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Item from '../components/Item'
 import CircularProgress from '@mui/material/CircularProgress';
-import { useParams } from 'react-router-dom';
+
 //fireBase
 import db from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -29,8 +29,9 @@ const Vodkas = () => {
     return productList
   }
   useEffect(()=>{
-    setProducts([])
     setLoading(true)
+    setProducts([])
+  
     getProducts().then((res)=>{
       setProducts(res)
       setLoading(false)
@@ -44,6 +45,7 @@ const Vodkas = () => {
   const filterByCategory = (productos)=>{
     const produtosFiltrados = []
     productos.map((category)=>{
+      //gins whiskys vodkas rons fernets sinalcohol licores beers aperitivos vinos
       if( category.category === 'vodkas'){
         produtosFiltrados.push(category)
         count = count + 1
