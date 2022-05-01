@@ -9,8 +9,8 @@ import { collection, getDocs } from 'firebase/firestore'
 //css
 import '../css/Category.css'
 
-const Vodkas = () => {
-  const [vodkas, setVodkas] = useState([])
+const Aperitivos = () => {
+  const [aperitivo, setAperitivo] = useState([])
   const [products , setProducts ] = useState([])
   const [loading, setLoading]= useState(true)
  
@@ -46,19 +46,19 @@ const Vodkas = () => {
     const produtosFiltrados = []
     productos.map((category)=>{
       //gins whiskys vodkas rons fernets sinalcohol licores beers aperitivos vinos
-      if( category.category === 'vodkas'){
+      if( category.category === 'aperitivos'){
        produtosFiltrados.push(category)
       }
       
     })
-    setVodkas(produtosFiltrados)
+    setAperitivo(produtosFiltrados)
 
   }
   
   
   return (
     <div  className='categoryTitle'>
-      <h2> Sección de Vodka</h2>
+      <h2> Sección de Aperitivos</h2>
       {loading ? 
       (<div> 
 
@@ -68,7 +68,7 @@ const Vodkas = () => {
       )
       :
       (<div className="category" >
-        {vodkas ? (vodkas.map((e)=>( <div key={e.id}>
+        {aperitivo ? (aperitivo.map((e)=>( <div key={e.id}>
           <Item 
               name={e.name}
               thumbnailUrl={e.thumbnailUrl}
@@ -84,4 +84,4 @@ const Vodkas = () => {
   )
 }
 
-export default Vodkas
+export default Aperitivos

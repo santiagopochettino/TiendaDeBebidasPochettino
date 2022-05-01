@@ -13,7 +13,9 @@ import Carrito from './pages/Carrito';
 import './css/App.css';
 //context
 import {CartContextProvider} from './context/CartContext';
+//bebidas
 import Vodkas from './pages/Vodkas';
+import Aperitivos from './pages/Aperitivos';
 
 
 
@@ -30,7 +32,7 @@ function App() {
             <Route path='/tienda' element={<Tienda/>}/>
             <Route path='/detalle/:id' element={<Detail/>}/>
             <Route path='/nosotros' element={<Nosotros/>}/>
-            <Route path='/category/vodkas' element={<Vodkas/>}/>
+            <Route path='/category/:category' element={<Vodkas/>}/>
             <Route path='/cart' element={<Carrito/>}/>
             <Route path='*' element={<NotFoundPage/>} />
          </Routes>

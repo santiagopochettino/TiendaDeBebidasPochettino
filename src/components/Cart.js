@@ -74,7 +74,6 @@ const Cart = () =>{
     const pushOrder = async (prevOrder) => {
       const orderFirebase = collection(db, 'ordenes')
       const orderDoc = await addDoc(orderFirebase, prevOrder)
-      console.log("orden generada: ", orderDoc.id)
       setSuccessOrder(orderDoc.id)
       
   }

@@ -27,7 +27,11 @@ function NavBar  ()  {
         title:'Vodkas',
         url:'/category/vodkas'
     },
-   
+    {
+        title:'Aperitivos',
+        url:'/category/aperitivos'
+    },
+    
 
     ]
     return( 
