@@ -3,16 +3,14 @@ import React, {useState} from 'react'
 //css
 import '../css/ItemCount.css'
 
-const ItemCount = ({onAdd,thumbnailUrl, stock, name, price,id }) => {
-    
-    const initial = 1
+const ItemCount = ({onAdd,thumbnailUrl, stock, name }) => {
+   const initial = 1
    const [count, setCount]= useState(initial);
    const addCount = ()=>{
       
    setCount(count + 1)
     }
     const removeCount = ()=>{
-        
         setCount(count - 1)
     }
     const finishShop = ()=>{

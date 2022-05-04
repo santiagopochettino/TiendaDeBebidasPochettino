@@ -26,8 +26,6 @@ export function CartContextProvider({ children }){
         setTotalCompra(totalCompra + (item.count * item.price))
         return true
     }
-    
-
     function emptyCart(){
         setCartList([]);
         setTotal(0)

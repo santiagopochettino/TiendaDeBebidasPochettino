@@ -45,7 +45,6 @@ const Aperitivos = () => {
   const filterByCategory = (productos)=>{
     const produtosFiltrados = []
     productos.map((category)=>{
-      //gins whiskys vodkas rons fernets sinalcohol licores beers aperitivos vinos
       if( category.category === 'aperitivos'){
        produtosFiltrados.push(category)
       }

@@ -45,7 +45,6 @@ const Vodkas = () => {
   const filterByCategory = (productos)=>{
     const produtosFiltrados = []
     productos.map((category)=>{
-      //gins whiskys vodkas rons fernets sinalcohol licores beers aperitivos vinos
       if( category.category === 'vodkas'){
        produtosFiltrados.push(category)
       }
@@ -55,15 +54,12 @@ const Vodkas = () => {
 
   }
   
-  
   return (
     <div  className='categoryTitle'>
       <h2> Sección de Vodka</h2>
       {loading ? 
       (<div> 
-
          <CircularProgress/>
-        
        </div>
       )
       :
@@ -79,7 +75,6 @@ const Vodkas = () => {
         (<div>No hay productos de esa categoria</div>)}
       </div>)
       }
-
     </div>
   )
 }

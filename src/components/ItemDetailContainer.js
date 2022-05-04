@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-// import { productList } from '../data/data';
 import ItemDetail from './ItemDetail';
 import CircularProgress from '@mui/material/CircularProgress';
 import { doc, getDoc } from "firebase/firestore";
@@ -14,9 +13,7 @@ const ItemDetailContainer = () => {
   const getProduct = async() => {
       const docRef = doc(db, "productos", id);
       const docSnap = await getDoc(docRef);
-
       if (docSnap.exists()) {
-          // console.log("Document data:", docSnap.data());
           let product = docSnap.data()
           product.id = docSnap.id
           setProduct(product)
@@ -24,7 +21,6 @@ const ItemDetailContainer = () => {
           navigate('/error')
         }
   }
-
   useEffect( () => {
     getProduct()
 }, [id])

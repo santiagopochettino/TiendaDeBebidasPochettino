@@ -20,16 +20,44 @@ function NavBar  ()  {
         url:'/tienda'
     },
     {
-        title:'Nosotros',
-        url:'/nosotros'
+        title:'Whisky',
+        url:'/category/whiskys'
     },
     {
-        title:'Vodkas',
+        title:'Cerveza',
+        url:'/category/beers'
+    },
+    {
+        title:'Ron',
+        url:'/category/rons'
+    },
+    {
+        title:'Licor',
+        url:'/category/licores'
+    },
+    {
+        title:'Gin',
+        url:'/category/gins'
+    },
+    {
+        title:'Fernet',
+        url:'/category/fernets'
+    },
+    {
+        title:'Vodka',
         url:'/category/vodkas'
     },
     {
-        title:'Aperitivos',
+        title:'Vino',
+        url:'/category/vinos'
+    },
+    {
+        title:'Aperitivo',
         url:'/category/aperitivos'
+    },
+    {
+        title:'SinAlcohol',
+        url:'/category/sinalcohol'
     },
     
 
@@ -50,9 +78,7 @@ function NavBar  ()  {
                             <Button className='btn-link' variant="contained" color='success' >
                                 <Link to={pages.url}>{pages.title}</Link>
                             </Button>
-                            
-                            </li>
-                       
+                        </li>
                     )
                 })}
 

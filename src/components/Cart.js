@@ -87,8 +87,6 @@ const Cart = () =>{
       })
   }
   
-
-
     return(
       <div >
         <CartItem items={cartList}/>

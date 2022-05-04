@@ -2,26 +2,21 @@ import React, { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import {CartContext} from "../context/CartContext"
-
+//css
 import '../css/ItemDetail.css'
-
-//ItemDetail recibe los datos del producto encontrado por id previamente y los muestra
 
 const ItemDetail = ({ item}) => {
   const [ contador, setContador ] = useState(0)
   const [compra, setCompra] = useState(false)
-
   const { agregarAlCarrito } = useContext(CartContext)
 
   function onAdd(count){
       setContador(count)
       setCompra(true)
-      
   }
   function handledClick(){
     agregarAlCarrito(item, contador)
   }
-  
   return (
     <article className="product-detail">
       <img src={item.thumbnailUrl} alt="" className="product-detail__img  "/>

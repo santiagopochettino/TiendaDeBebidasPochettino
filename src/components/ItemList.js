@@ -9,22 +9,20 @@ import {collection, getDocs} from 'firebase/firestore';
 import '../css/ItemList.css'
 
 const ItemList = () => {
-  const [products, setProducts] = useState([]);
-  const [contador, setContador] = useState(0)
-  const [loading , setLoading] = useState(true)
-  const { category } = useParams()
-  const getProducts = async () => {
+    const [products, setProducts] = useState([]);
+    const [contador, setContador] = useState(0)
+    const [loading , setLoading] = useState(true)
+    const { category } = useParams()
+    const getProducts = async () => {
     const itemsCollection = collection(db, 'productos')
     const productosSnapshot = await getDocs(itemsCollection)
     const productList = productosSnapshot.docs.map((doc) => {
             let product = doc.data()
             product.id = doc.id
-         
             return product
         }
     )
     return productList
-
 } 
   useEffect(() => {
     setProducts([])
