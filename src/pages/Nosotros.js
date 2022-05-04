@@ -5,7 +5,7 @@ import '../css/Nosotros.css'
 const Nosotros = () => {
   return (
     <div className='nosotrosDescription'>
-        <h2>Tienda de bebidas Sofia</h2>
+        <h2>Sophia's Drinks</h2>
          <p> Somos MercadoLíder - Número 1 en Ventas</p>
          <p>Envíos a Todo el País - Mercado Envíos</p>
          <p>Retirá por nuestro local 24 horas hábiles después de realizar la compra ubicado en Mar del Plata:

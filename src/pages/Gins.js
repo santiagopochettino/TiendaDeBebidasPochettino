@@ -73,6 +73,7 @@ const Gins = () => {
               thumbnailUrl={e.thumbnailUrl}
               price={e.price}
               stock={e.stock}
+              id={e.id}
               />
         </div>))): 
         (<div>No hay productos de esa categoria</div>)}

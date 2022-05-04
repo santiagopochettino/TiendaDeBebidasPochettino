@@ -34,6 +34,22 @@ header .main-header{
    
   }
   
-  
-  
-  
+@media all and (max-width:769px) {
+.navbar{
+  flex-direction: column;
+}
+.navbar li{
+  margin-bottom: 10px;
+  width: 200px;
+  align-self: center;
+  margin-right: 0px;
+  margin-left: 80px;
+}
+.CartBar{
+  margin-top: 35%;
+}
+.container-logo{
+  margin-top: 35%;
+}
+    
+  }

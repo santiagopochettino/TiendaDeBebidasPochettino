@@ -14,7 +14,7 @@ import { addDoc, collection } from 'firebase/firestore';
 
 const Cart = () =>{
 
-    const {cartList, emptyCart, total, totalCompra } = useContext(CartContext)
+    const {cartList, emptyCart, total, totalCompra} = useContext(CartContext)
     const [openModal, setOpenModal] = useState(false)
     const [successOrder, setSuccessOrder] = useState()
     const [formData, setFormData] = useState({
@@ -36,7 +36,9 @@ const Cart = () =>{
           total: ''
       }
   )
-
+    const handledClearX = ()=>{
+        setOpenModal(false)
+    }
     const handledClear = ()=>{
       emptyCart()
     }
@@ -120,7 +122,7 @@ const Cart = () =>{
                     </div>
                 ) : ( 
                     <div className="form">
-                         <button className="formX" onClick={()=> setOpenModal(false)}>X</button>
+                         <button className="formX" onClick={handledClearX}>X</button>
                         <h3>Para finalizar tu compra completá:</h3>
                         <form onSubmit={handleSubmit}>
                             <label for="name">Nombre y Apellido:</label>

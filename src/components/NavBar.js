@@ -56,7 +56,7 @@ function NavBar  ()  {
         url:'/category/aperitivos'
     },
     {
-        title:'SinAlcohol',
+        title:'Jugo',
         url:'/category/sinalcohol'
     },
     

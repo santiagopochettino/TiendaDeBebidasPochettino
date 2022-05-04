@@ -6,7 +6,6 @@ import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import Detail from './pages/Detail';
 import NotFoundPage from './pages/NotFoundPage';
 import HomePage from './pages/HomePage';
-import Nosotros from './pages/Nosotros';
 import Tienda from './pages/Tienda';
 import Carrito from './pages/Carrito';
 //ccs
@@ -14,7 +13,6 @@ import './css/App.css';
 //context
 import {CartContextProvider} from './context/CartContext';
 //bebidas
-
 import Aperitivos from './pages/Aperitivos';
 import Beers from './pages/Beers';
 import Fernets from './pages/Fernets';
@@ -40,7 +38,6 @@ function App() {
             <Route path='/' element={<HomePage/>}/>
             <Route path='/tienda' element={<Tienda/>}/>
             <Route path='/detalle/:id' element={<Detail/>}/>
-            <Route path='/nosotros' element={<Nosotros/>}/>
             <Route path='/category/aperitivos' element={<Aperitivos/>}/>
             <Route path='/category/beers' element={<Beers/>}/>
             <Route path='/category/fernets' element={<Fernets/>}/>
