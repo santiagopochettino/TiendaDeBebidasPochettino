@@ -6,7 +6,7 @@ import '../css/Logo.css'
 const Logo = () => {
   return (
     <div className='header-logo'>
-        <img src='beer.png'  alt="logo"/>
+        <img src='favicon.png'  alt="logo"/>
     </div>
   )
 }
