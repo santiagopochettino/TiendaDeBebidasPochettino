@@ -74,7 +74,8 @@
     background-color: #fff;
   }
   .countContainer__counter--button--finish{
-    background-color: #1b5e20;
+    background:linear-gradient(45deg, #18eb38, #10c01f);
+    animation: hue-rotate 2s linear infinite alternate;
     border: none;
     font-weight: 700;
     font-size: 1rem;
@@ -91,12 +92,13 @@
     
   }
   .countContainer__counter--button--detalle{
-    background-color: #1b5e20;
+    background:linear-gradient(45deg, #18eb38, #10c01f);
+    animation: hue-rotate 2s linear infinite alternate;
     width: 100px;
-    height: 20px;
+    height: 30px;
     font-weight: 700;
     border-radius: 5px;
-    border: none;
+   border: none;
   }
   .countContainer__counter--button--detalle:hover{
     background-color: #173e19;

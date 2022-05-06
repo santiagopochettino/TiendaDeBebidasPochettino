@@ -4,6 +4,7 @@
     align-items: center;
     padding: 20px;
     height: 67.5vh;
+    
   }
   
   
@@ -14,6 +15,7 @@
   
   .product-detail__info {
     text-align: center;
+    
   }
   
   .product-detail__info h2 {
@@ -28,6 +30,7 @@
     display: grid;
     grid-template: 1fr/1fr 1fr;
     gap: 10px 0;
+
   }
   
   .info-grid li {

@@ -24,10 +24,18 @@ header .main-header{
     display: flex;
     margin-top: 10px;
   }
+  .btn-link{
+    background:linear-gradient(45deg, #42f039, #1ea107);
+    animation: hue-rotate 2s linear infinite alternate;
+  }
   .btn-link a {
     list-style-type: none;
     color: #fff;
     text-decoration: none;
+   
+  }
+  @keyframes hue-rotate{
+    to{ filter: hue-rotate(90deg);}
   }
   .CartBar {
     margin-top: 35px;

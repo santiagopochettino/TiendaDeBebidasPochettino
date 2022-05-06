@@ -1,6 +1,7 @@
 .ItemContainer2 button{
     color: #fff;
-    background-color: #c62828;
+    background:linear-gradient(45deg, #f90606, #f81f07);
+    animation: hue-rotate 2s linear infinite alternate;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 95%;

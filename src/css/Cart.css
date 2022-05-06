@@ -41,11 +41,16 @@ width: 90%;
 }
 .formX {
     color: #fff;
-    background-color: #c62828;
+    background:linear-gradient(45deg, #f90606, #f81f07);
+    animation: hue-rotate 2s linear infinite alternate;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bolder;
     border: none;
+}
+.btnVaciarCartRed{
+    background:linear-gradient(45deg, #f90606, #f81f07);
+    animation: hue-rotate 2s linear infinite alternate;
 }
 
 .formX:hover{

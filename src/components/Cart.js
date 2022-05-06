@@ -93,7 +93,7 @@ const Cart = () =>{
       <div >
         <CartItem items={cartList}/>
         <div className="cart">
-        <Button className='btn-link btnVaciarCart'  onClick={handledClear} variant="contained" color="error" >
+        <Button className='btn-link btnVaciarCart btnVaciarCartRed'  onClick={handledClear} variant="contained" color="error" >
            Vaciar Carrito
         </Button>
         <Button className='btn-link btnVaciarCart'  onClick={SeguirComprando} variant="contained" color="success" >
