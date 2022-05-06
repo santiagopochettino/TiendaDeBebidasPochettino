@@ -4,17 +4,15 @@ export const CartContext = createContext([]);
 
 export function CartContextProvider({ children }){
     
-    const [cartList, setCartList] = useState([]);
+    const [cartList, setCartList] = useState([])
     const [total, setTotal] = useState(0)
     const [totalCompra, setTotalCompra] = useState(0)
 
-    
-
     const getId = (id)=> cartList.find(product=>product.id === id  ) || null
+
     function agregarAlCarrito(item, count){
         const idCart = getId(item.id)
         if ( !idCart ) {
-
             setCartList([...cartList, item])
             item.count = count 
         } else{
@@ -27,22 +25,49 @@ export function CartContextProvider({ children }){
         return true
     }
     function emptyCart(){
-        setCartList([]);
+        setCartList([])
         setTotal(0)
+        setTotalCompra(0)
     }
     const isInCart = (id) =>{
         return cartList.some( prod => prod.id === id)
     }
-    const deleteOne = (id) => {
-        setCartList(cartList.filter(p => p.id !== id));
-    }
+    
     const sumaTotal = () => {
-       return cartList.reduce((acum, item) => acum = acum + (item.price * item.cantidad), 0)
+       return calcularTotal(cartList)
     }
 
+    const calcularTotal = (cartList) => {
+        return cartList.reduce((acum, item) => acum = acum + (item.price * item.cantidad), 0)
+     }
+
     const cantidad = () => {
+        return calcularCantidad(cartList)
+    }
+    
+    const calcularCantidad = (cartList) => {
         return cartList.reduce((acum, item) => acum += item.cantidad, 0)
-    } 
+    }
+
+    const deleteOne = (id) => {
+        setCartList(cartList.filter(p => p.id !== id))
+        setTotal(cantidadForItem())
+        setTotalCompra(sumaForItem())
+    }
+
+    const getItemFromCart = (id) => {
+        return cartList.filter(p => p.id === id)
+    }
+
+    const cantidadForItem = (id) => {
+        const item = getItemFromCart(id)
+        return calcularCantidad(item)
+    }
+
+    const sumaForItem = (id) =>{
+        const item = getItemFromCart(id)
+        return calcularTotal(item)
+    }
     
     return <CartContext.Provider value={{
         cartList,
