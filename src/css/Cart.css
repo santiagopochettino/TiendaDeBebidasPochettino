@@ -47,6 +47,8 @@ width: 90%;
     cursor: pointer;
     font-weight: bolder;
     border: none;
+    font-size: 16px;
+    margin-left: 530px!important;
 }
 .btnVaciarCartRed{
     background:linear-gradient(45deg, #f90606, #f81f07);
