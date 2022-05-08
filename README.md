@@ -1,4 +1,14 @@
-Este es el sitio web "Sophia's Drinks", es un e-commers de venta de bebidas.
+Tienda en React JS
+Ecommerce realizado en React JS para CoderHouse, comision 31120
 
-Esta hecho en React.js, CSS3 y Materiasl UI.
+Autor
+Santiago Pochettino
 
+Dependencias
+Se utilizó:
+
+React JS
+CSS3
+Material UI
+FireBase
+React Router
